@@ -5,7 +5,183 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/* Self-hosted Varsity font — used for the hero headline. Path is relative to this file so Vite bundles it correctly in dev and prod. */
+@font-face {
+    font-family: 'Varsity';
+    src: url('../fonts/varsity/varsity-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    /* Fonts */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Passion One', cursive;
+    --font-devcon: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-digital: 'Orbitron', monospace;
+    --font-varsity: 'Varsity', 'Passion One', ui-serif, Georgia, serif;
+    /* Legacy alias for --font-display; remove once views are migrated to font-display */
+    --font-passion: 'Passion One', cursive;
+
+    /* Primary palette */
+    --color-midnight: #0F0F1E;
+    --color-darkbg: #1A1A2E;
+    --color-elevated: #2A2A4E;
+    --color-gold: #D4A017;
+    --color-gold-soft: #E8B940;
+
+    /* Signature accent */
+    --color-violet: #7C3AED;
+    --color-cyan: #06B6D4;
+
+    /* Neutrals (light surfaces & on-light text) */
+    --color-ink: #0F0F1E;
+    --color-ink-muted: #4B4B5C;
+    --color-ink-subtle: #8B8B9C;
+    --color-paper: #FFFFFF;
+    --color-paper-soft: #F7F7FA;
+    --color-rule: #E5E5EC;
+
+    /* Sponsor tiers */
+    --color-tier-platinum: #E5E4E2;
+    --color-tier-gold: #D4A017;
+    --color-tier-silver: #A8A8B5;
+    --color-tier-bronze: #B08D57;
+
+    /* Semantic */
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --color-info: #3B82F6;
+}
+
+/* font-devcon is a complete section-heading style: Inter family + 800 weight + tight tracking */
+.font-devcon {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+/* Hero section */
+.hero-bg {
+    background: url('/hero-bg.jpg') center center / cover no-repeat;
+}
+
+.countdown-digit {
+    font-family: var(--font-digital);
+    background: linear-gradient(180deg, var(--color-darkbg) 0%, var(--color-elevated) 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.05em;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Signature Violet → Cyan gradient. Reserved for hero CTA, footer band, and key callouts. */
+.bg-energy {
+    background: linear-gradient(135deg, var(--color-violet) 0%, var(--color-cyan) 100%);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gold);
+    color: var(--color-midnight);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 200ms ease-out;
+}
+
+.btn-primary:hover {
+    background: var(--color-gold-soft);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-midnight);
+    color: var(--color-midnight);
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+.btn-secondary:hover {
+    background: var(--color-midnight);
+    color: var(--color-paper);
+}
+
+/* Reserved for the single primary CTA per page (e.g. "Reserve your seat") */
+.btn-energy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-violet) 0%, var(--color-cyan) 100%);
+    color: var(--color-paper);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.btn-energy:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 40px rgba(124, 58, 237, 0.45);
+}
+
+/* Section eyebrow — small uppercase gold label paired with H2 in section headers */
+.section-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+}
+
+/* Scroll reveal — apply with Alpine + IntersectionObserver, toggling .is-visible */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+[x-cloak] {
+    display: none !important;
 }
