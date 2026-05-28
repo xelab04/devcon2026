@@ -128,6 +128,7 @@
             <div class="flex flex-col items-start gap-8 md:gap-8">
                 <img src="/images/sponsors/swan.png" alt="SWAN" class="h-[60px] md:h-[75px]" />
                 <img src="/images/sponsors/google.png" alt="Google" class="h-[60px] md:h-[70px]" />
+                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[60px] md:h-[70px]" />
             </div>
         </div>
 
@@ -142,7 +143,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <span class="text-gray-400 italic text-sm">Sponsor to be announced</span>
+                <img src="/images/sponsors/bdo-consulting.png" alt="BDO Consulting" class="h-[60px] md:h-[70px]" />
             </div>
         </div>
 
@@ -164,7 +165,7 @@
         <div class="hidden w-full h-px bg-gray-200"></div>
 
         <!-- Bronze - Team Argentina -->
-        <div class="hidden">
+        <div>
             <div class="flex items-center gap-3 mb-6">
                 <span class="w-12 h-12 rounded-full inline-flex items-center justify-center text-[28px] shadow-md">&#127462;&#127479;</span>
                 <h3 class="text-xl md:text-2xl font-extrabold text-gray-900">
@@ -172,11 +173,12 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <span class="text-gray-400 italic text-sm">Sponsor to be announced</span>
+                <img src="/images/sponsors/frci.png" alt="FRCI" class="h-[60px] md:h-[80px]" />
+                <img src="/images/sponsors/ios.png" alt="IOS" class="h-[60px] md:h-[80px]" />
             </div>
         </div>
 
-        <div class="hidden w-full h-px bg-gray-200"></div>
+        <div class="w-full h-px bg-gray-200"></div>
 
         <!-- Speaker Sponsor -->
         <div>
@@ -249,7 +251,7 @@
         <div class="w-full h-px bg-gray-200"></div>
 
         <!-- Media Partner -->
-        <div>
+        <div class="hidden">
             <div class="mb-6">
                 <h3 class="text-xl md:text-2xl font-extrabold text-gray-900">
                     Media Partner
