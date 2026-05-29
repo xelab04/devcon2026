@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $title = 'MSCC — Developers Conference 2025';
+    $title = 'MSCC — Developers Conference 2026';
 
     return view('index', compact('title'));
 })->name('index');

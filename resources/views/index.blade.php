@@ -52,16 +52,16 @@
             <div class="text-center">
                 <p class="text-sm text-gray-600 mb-3">Save the date in your calendar!</p>
                 <div class="flex items-center justify-center gap-3">
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260304%2F20260307&details=Join%20the%20Developers%20Conference%202026&location=Voila%20Hotel%20Bagatelle&text=Developers%20Conference%202026" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Google Calendar">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260723%2F20260726&details=Join%20the%20Developers%20Conference%202026&location=Voila%20Hotel%20Bagatelle&text=Developers%20Conference%202026" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Google Calendar">
                         <i class="fab fa-google text-gray-600"></i>
                     </a>
                     <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Apple Calendar">
                         <i class="fab fa-apple text-gray-600"></i>
                     </a>
-                    <a href="https://outlook.office.com/calendar/action/compose?allday=true&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2026-03-04&enddt=2026-03-07&subject=Developers%20Conference%202026&location=Voila%20Hotel%20Bagatelle" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Outlook">
+                    <a href="https://outlook.office.com/calendar/action/compose?allday=true&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2026-07-23&enddt=2026-07-26&subject=Developers%20Conference%202026&location=Voila%20Hotel%20Bagatelle" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Outlook">
                         <i class="fab fa-microsoft text-gray-600"></i>
                     </a>
-                    <a href="https://calendar.yahoo.com/?dur=allday&in_loc=Voila%20Hotel%20Bagatelle&et=20260307&st=20260304&title=Developers%20Conference%202026&v=60" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Yahoo Calendar">
+                    <a href="https://calendar.yahoo.com/?dur=allday&in_loc=Voila%20Hotel%20Bagatelle&et=20260726&st=20260723&title=Developers%20Conference%202026&v=60" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors" title="Yahoo Calendar">
                         <i class="fab fa-yahoo text-gray-600"></i>
                     </a>
                 </div>

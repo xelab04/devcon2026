@@ -219,7 +219,7 @@
                 </div>
                 <div class="border-b border-rule pb-10">
                     <div class="text-xs text-ink-muted font-mono uppercase tracking-wider">font-sans · Inter 400/500/600</div>
-                    <p class="text-xl md:text-2xl mt-3 max-w-3xl">DevCon brings together developers, designers, and craftspeople from across Mauritius and beyond — three days of workshops, talks, and networking in March 2026.</p>
+                    <p class="text-xl md:text-2xl mt-3 max-w-3xl">DevCon brings together developers, designers, and craftspeople from across Mauritius and beyond — three days of workshops, talks, and networking in July 2026.</p>
                     <p class="mt-4 text-ink-muted max-w-2xl">Body, UI, paragraphs. Default font.</p>
                 </div>
                 <div>

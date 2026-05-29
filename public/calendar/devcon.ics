@@ -3,10 +3,10 @@ VERSION:2.0
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-DTSTART:20250724
-DTEND:20250727
-SUMMARY:Developers Conference 2025
-LOCATION:Caudan Arts Centre, Port Louis
-DESCRIPTION:Join the Developers Conference 2025 along with developers, enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!
+DTSTART:20260723
+DTEND:20260726
+SUMMARY:Developers Conference 2026
+LOCATION:Voila Hotel Bagatelle
+DESCRIPTION:Join the Developers Conference 2026 along with developers, enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!
 END:VEVENT
 END:VCALENDAR
