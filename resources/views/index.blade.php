@@ -216,7 +216,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/novity.png" alt="Novity" class="h-[50px] md:h-[85px]" />
+                <img src="/images/sponsors/novity.png" alt="Novity" class="h-[50px] md:h-[60px]" />
             </div>
         </div>
 
