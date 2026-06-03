@@ -195,14 +195,14 @@
         <div class="w-full h-px bg-gray-200"></div>
 
         <!-- Internet Sponsor -->
-        <div class="hidden">
+        <div>
             <div class="mb-6">
                 <h3 class="text-xl md:text-2xl font-extrabold text-gray-900">
                     Internet Sponsor
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/kaldera.png" alt="Kaldera" class="h-[50px] md:h-[60px]" />
+                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[50px] md:h-[60px]" />
             </div>
         </div>
 
