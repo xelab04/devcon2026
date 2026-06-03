@@ -206,7 +206,7 @@
             </div>
         </div>
 
-        <div class="hidden w-full h-px bg-gray-200"></div>
+        <div class="w-full h-px bg-gray-200"></div>
 
         <!-- Giveaways Sponsor -->
         <div>
