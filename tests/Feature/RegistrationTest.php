@@ -80,7 +80,7 @@ it('shows the coming-soon placeholder instead of the form when registration is c
 
     $this->get(route('register'))
         ->assertOk()
-        ->assertSee('Registration opens in June')
+        ->assertSee('Registration will open on 13 June 2026.')
         ->assertDontSee('Complete registration');
 });
 
