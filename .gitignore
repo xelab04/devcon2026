@@ -30,3 +30,6 @@ Thumbs.db
 /.antigravitycli
 /.gemini
 
+# Last year's site — kept locally for reference only, never committed
+/devcon2025
+

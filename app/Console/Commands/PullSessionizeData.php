@@ -60,7 +60,9 @@ class PullSessionizeData extends Command
             return self::FAILURE;
         }
 
-        if ($this->fetch("{$baseUrl}/Sessions", 'sessions.json') === null) {
+        // The GridSmart view returns the full schedule grid (talks plus keynotes,
+        // breaks and other service sessions) grouped by day and room.
+        if ($this->fetch("{$baseUrl}/GridSmart", 'sessions.json') === null) {
             return self::FAILURE;
         }
 

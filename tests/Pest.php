@@ -45,3 +45,118 @@ function something()
 {
     // ..
 }
+
+/**
+ * Fake the private "local" disk and seed it with Sessionize fixtures so the
+ * speakers and agenda pages can be exercised without the real downloaded data.
+ */
+function fakeSessionize(): void
+{
+    \Illuminate\Support\Facades\Storage::fake('local');
+
+    \Illuminate\Support\Facades\Storage::disk('local')->put('sessionize/speakers.json', json_encode([
+        [
+            'id' => 'spk-ada',
+            'fullName' => 'Ada Lovelace',
+            'tagLine' => 'First Programmer',
+            'bio' => "Pioneer of computing.\nWrote the first algorithm.",
+            'profilePicture' => '/speakers/profile-pictures/spk-ada.jpg',
+            'links' => [
+                ['title' => 'LinkedIn', 'url' => 'https://linkedin.com/in/ada', 'linkType' => 'LinkedIn'],
+            ],
+            'sessions' => [['id' => 1001, 'name' => 'Analytical Engines']],
+        ],
+        [
+            'id' => 'spk-alan',
+            'fullName' => 'Alan Turing',
+            'tagLine' => 'Computer Scientist',
+            'bio' => 'Father of theoretical computer science.',
+            'profilePicture' => '/speakers/profile-pictures/spk-alan.jpg',
+            'links' => [],
+            'sessions' => [['id' => 1002, 'name' => 'On Computable Numbers']],
+        ],
+    ]));
+
+    \Illuminate\Support\Facades\Storage::disk('local')->put('sessionize/sessions.json', json_encode([
+        [
+            'date' => '2026-07-23T00:00:00',
+            'isDefault' => true,
+            'rooms' => [
+                [
+                    'id' => 1,
+                    'name' => 'Educator 1',
+                    'sessions' => [
+                        [
+                            'id' => 'plenum-1',
+                            'title' => 'Opening Keynote',
+                            'description' => 'Welcome to DevCon 2026.',
+                            'startsAt' => '2026-07-23T09:00:00',
+                            'endsAt' => '2026-07-23T10:00:00',
+                            'room' => 'Educator 1',
+                            'roomId' => 1,
+                            'isPlenumSession' => true,
+                            'isServiceSession' => true,
+                            'speakers' => [],
+                        ],
+                        [
+                            'id' => '1001',
+                            'title' => 'Analytical Engines',
+                            'description' => "A deep dive into mechanical computation.\nBring your gears.",
+                            'startsAt' => '2026-07-23T11:00:00',
+                            'endsAt' => '2026-07-23T12:00:00',
+                            'room' => 'Educator 1',
+                            'roomId' => 1,
+                            'isPlenumSession' => false,
+                            'isServiceSession' => false,
+                            'speakers' => [['id' => 'spk-ada', 'name' => 'Ada Lovelace']],
+                        ],
+                    ],
+                ],
+                [
+                    'id' => 2,
+                    'name' => 'Educator 2',
+                    'sessions' => [
+                        [
+                            'id' => '2001',
+                            'title' => 'Rust in Practice',
+                            'description' => 'Fearless concurrency.',
+                            'startsAt' => '2026-07-23T11:00:00',
+                            'endsAt' => '2026-07-23T12:00:00',
+                            'room' => 'Educator 2',
+                            'roomId' => 2,
+                            'isPlenumSession' => false,
+                            'isServiceSession' => false,
+                            'speakers' => [],
+                        ],
+                    ],
+                ],
+            ],
+            'timeSlots' => [],
+        ],
+        [
+            'date' => '2026-07-24T00:00:00',
+            'isDefault' => false,
+            'rooms' => [
+                [
+                    'id' => 2,
+                    'name' => 'Educator 2',
+                    'sessions' => [
+                        [
+                            'id' => '1002',
+                            'title' => 'On Computable Numbers',
+                            'description' => 'Halting problems and beyond.',
+                            'startsAt' => '2026-07-24T11:00:00',
+                            'endsAt' => '2026-07-24T12:00:00',
+                            'room' => 'Educator 2',
+                            'roomId' => 2,
+                            'isPlenumSession' => false,
+                            'isServiceSession' => false,
+                            'speakers' => [['id' => 'spk-alan', 'name' => 'Alan Turing']],
+                        ],
+                    ],
+                ],
+            ],
+            'timeSlots' => [],
+        ],
+    ]));
+}

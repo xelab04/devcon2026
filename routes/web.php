@@ -4,8 +4,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SpeakerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,19 +18,11 @@ Route::get('/', function () {
 
 Route::view('/brand-system', 'brand-system')->name('brand-system');
 
-Route::view('/speakers', 'placeholder', [
-    'title' => 'Speakers — MSCC DevCon 2026',
-    'heading' => 'SPEAKERS',
-    'subheading' => 'Sessions under review',
-    'message' => 'The submission window has closed and our review committee is finalising the lineup. Check back soon — speakers will be announced once selections are confirmed.',
-])->name('speakers');
+Route::get('/speakers', [SpeakerController::class, 'index'])->name('speakers');
+Route::get('/speakers/{id}', [SpeakerController::class, 'show'])->name('speaker');
 
-Route::view('/agenda', 'placeholder', [
-    'title' => 'Agenda — MSCC DevCon 2026',
-    'heading' => 'AGENDA',
-    'subheading' => 'Coming in May',
-    'message' => "We're putting the finishing touches on the schedule. The full agenda — keynotes, workshops, and networking — will be published in May 2026.",
-])->name('agenda');
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda');
+Route::get('/agenda/{id}', [AgendaController::class, 'show'])->name('session');
 
 Route::get('/register', [RegistrationController::class, 'create'])->name('register');
 Route::post('/register', [RegistrationController::class, 'store'])->name('register.store');
