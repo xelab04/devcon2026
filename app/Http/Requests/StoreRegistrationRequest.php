@@ -12,7 +12,7 @@ class StoreRegistrationRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return true;
+        return (bool) config('registration.open');
     }
 
     /**
