@@ -60,7 +60,7 @@ function fakeSessionize(): void
             'fullName' => 'Ada Lovelace',
             'tagLine' => 'First Programmer',
             'bio' => "Pioneer of computing.\nWrote the first algorithm.",
-            'profilePicture' => '/speakers/profile-pictures/spk-ada.jpg',
+            'profilePicture' => '/images/speakers/spk-ada.jpg',
             'links' => [
                 ['title' => 'LinkedIn', 'url' => 'https://linkedin.com/in/ada', 'linkType' => 'LinkedIn'],
             ],
@@ -71,7 +71,7 @@ function fakeSessionize(): void
             'fullName' => 'Alan Turing',
             'tagLine' => 'Computer Scientist',
             'bio' => 'Father of theoretical computer science.',
-            'profilePicture' => '/speakers/profile-pictures/spk-alan.jpg',
+            'profilePicture' => '/images/speakers/spk-alan.jpg',
             'links' => [],
             'sessions' => [['id' => 1002, 'name' => 'On Computable Numbers']],
         ],

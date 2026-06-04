@@ -36,8 +36,9 @@ class PullSessionizeData extends Command
 
     /**
      * The public (untracked) directory that holds the downloaded profile pictures.
+     * Kept out of the "speakers/" path so it does not shadow the /speakers route.
      */
-    private const PUBLIC_DIRECTORY = 'speakers/profile-pictures';
+    private const PUBLIC_DIRECTORY = 'images/speakers';
 
     /**
      * Execute the console command.
