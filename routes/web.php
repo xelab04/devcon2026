@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,12 +30,8 @@ Route::view('/agenda', 'placeholder', [
     'message' => "We're putting the finishing touches on the schedule. The full agenda — keynotes, workshops, and networking — will be published in May 2026.",
 ])->name('agenda');
 
-Route::view('/register', 'placeholder', [
-    'title' => 'Register — MSCC DevCon 2026',
-    'heading' => 'REGISTER',
-    'subheading' => 'Registration opens in June',
-    'message' => "We're prepping the registration platform now. Tickets go live in June 2026 — save the date and we'll let you know the moment the doors open.",
-])->name('register');
+Route::get('/register', [RegistrationController::class, 'create'])->name('register');
+Route::post('/register', [RegistrationController::class, 'store'])->name('register.store');
 
 Route::view('/team', 'team', [
     'title' => 'Team — MSCC DevCon 2026',
@@ -100,3 +102,39 @@ Route::view('/team', 'team', [
         ]],
     ],
 ])->name('team');
+
+/*
+|--------------------------------------------------------------------------
+| Backoffice
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/admin/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+Route::post('/admin/login', [AuthenticatedSessionController::class, 'store'])->name('login.store');
+Route::post('/admin/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')->name('logout');
+
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return redirect()->route(
+            auth()->user()->isAdmin() ? 'admin.dashboard' : 'admin.registrations.index'
+        );
+    })->name('home');
+
+    // Registrations — visible to admin and squad (squad sees a limited column set).
+    Route::get('registrations', [AdminRegistrationController::class, 'index'])->name('registrations.index');
+    Route::get('registrations/export', [AdminRegistrationController::class, 'export'])
+        ->middleware('can:export-registrations')->name('registrations.export');
+    Route::post('registrations/{registration}/check-in', [AdminRegistrationController::class, 'checkIn'])->name('registrations.check-in');
+    Route::post('registrations/{registration}/cancel-check-in', [AdminRegistrationController::class, 'cancelCheckIn'])->name('registrations.cancel-check-in');
+
+    // Profile — any authenticated user can change their own password.
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
+
+    // Admin-only.
+    Route::middleware('role:admin')->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('users', UserController::class)->except(['show']);
+    });
+});
