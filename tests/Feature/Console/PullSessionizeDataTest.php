@@ -39,8 +39,8 @@ function fakeSessionizeResponses(): void
                 'sessions' => [],
             ],
         ]),
-        'sessionize.com/api/v2/*/view/Sessions' => Http::response([
-            ['groupName' => 'Day 1', 'sessions' => [['id' => 1, 'title' => 'Analytical Engines']]],
+        'sessionize.com/api/v2/*/view/GridSmart' => Http::response([
+            ['date' => '2026-07-23T00:00:00', 'rooms' => [], 'timeSlots' => []],
         ]),
         'sessionize.com/image/*' => Http::response('fake-image-bytes'),
     ]);
@@ -87,7 +87,7 @@ it('keeps the remote url when a picture download fails', function () {
                 'sessions' => [],
             ],
         ]),
-        'sessionize.com/api/v2/*/view/Sessions' => Http::response([]),
+        'sessionize.com/api/v2/*/view/GridSmart' => Http::response([]),
         'sessionize.com/image/*' => Http::response('not found', 404),
     ]);
 
