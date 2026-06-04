@@ -11,8 +11,8 @@ beforeEach(function () {
 
 afterEach(function () {
     File::delete([
-        public_path('speakers/profile-pictures/aaaa-1111.jpg'),
-        public_path('speakers/profile-pictures/bbbb-2222.png'),
+        public_path('images/speakers/aaaa-1111.jpg'),
+        public_path('images/speakers/bbbb-2222.png'),
     ]);
 });
 
@@ -59,12 +59,12 @@ it('caches both endpoints privately, downloads pictures, and rewrites paths', fu
     expect($raw[0]['profilePicture'])->toBe('https://sessionize.com/image/ada-400o400o1-abc.jpg');
 
     $processed = json_decode(Storage::disk('local')->get('sessionize/speakers.json'), true);
-    expect($processed[0]['profilePicture'])->toBe('/speakers/profile-pictures/aaaa-1111.jpg')
-        ->and($processed[1]['profilePicture'])->toBe('/speakers/profile-pictures/bbbb-2222.png')
+    expect($processed[0]['profilePicture'])->toBe('/images/speakers/aaaa-1111.jpg')
+        ->and($processed[1]['profilePicture'])->toBe('/images/speakers/bbbb-2222.png')
         ->and($processed[2]['profilePicture'])->toBe('');
 
-    expect(File::exists(public_path('speakers/profile-pictures/aaaa-1111.jpg')))->toBeTrue()
-        ->and(File::exists(public_path('speakers/profile-pictures/bbbb-2222.png')))->toBeTrue();
+    expect(File::exists(public_path('images/speakers/aaaa-1111.jpg')))->toBeTrue()
+        ->and(File::exists(public_path('images/speakers/bbbb-2222.png')))->toBeTrue();
 });
 
 it('does not request a picture for a speaker without one', function () {
@@ -95,7 +95,7 @@ it('keeps the remote url when a picture download fails', function () {
 
     $processed = json_decode(Storage::disk('local')->get('sessionize/speakers.json'), true);
     expect($processed[0]['profilePicture'])->toBe('https://sessionize.com/image/ada-400o400o1-abc.jpg');
-    expect(File::exists(public_path('speakers/profile-pictures/aaaa-1111.jpg')))->toBeFalse();
+    expect(File::exists(public_path('images/speakers/aaaa-1111.jpg')))->toBeFalse();
 });
 
 it('fails when a Sessionize endpoint is unreachable', function () {
