@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'sessionize' => [
+        'endpoint_id' => env('SESSIONIZE_ENDPOINT_ID', '67cafpod'),
+    ],
+
 ];

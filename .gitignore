@@ -18,6 +18,7 @@
 /node_modules
 /public/build
 /public/hot
+/public/speakers/profile-pictures
 /public/storage
 /storage/*.key
 /storage/pail
