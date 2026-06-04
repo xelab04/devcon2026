@@ -13,6 +13,15 @@ class RegistrationController extends Controller
 {
     public function create(): View
     {
+        if (! config('registration.open')) {
+            return view('placeholder', [
+                'title' => 'Register — MSCC DevCon 2026',
+                'heading' => 'REGISTER',
+                'subheading' => 'Registration opens in June',
+                'message' => "We're prepping the registration platform now. Tickets go live in June 2026 — save the date and we'll let you know the moment the doors open.",
+            ]);
+        }
+
         return view('register', ['title' => 'Register — MSCC DevCon 2026']);
     }
 

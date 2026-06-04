@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Mail;
 
 uses(RefreshDatabase::class);
 
+beforeEach(function () {
+    config(['registration.open' => true]);
+});
+
 function validRegistrationData(array $overrides = []): array
 {
     return array_merge([
@@ -69,4 +73,24 @@ it('validates that all fields are required', function () {
             'affiliation_type', 'organisation', 'job_title',
             'first_time', 'attending_reason', 'consent',
         ]);
+});
+
+it('shows the coming-soon placeholder instead of the form when registration is closed', function () {
+    config(['registration.open' => false]);
+
+    $this->get(route('register'))
+        ->assertOk()
+        ->assertSee('Registration opens in June')
+        ->assertDontSee('Complete registration');
+});
+
+it('rejects submissions when registration is closed', function () {
+    Mail::fake();
+    config(['registration.open' => false]);
+
+    $this->post(route('register.store'), validRegistrationData())
+        ->assertForbidden();
+
+    $this->assertDatabaseCount('registrations', 0);
+    Mail::assertNothingQueued();
 });
