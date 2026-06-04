@@ -18,7 +18,7 @@ class RegistrationController extends Controller
                 'title' => 'Register — MSCC DevCon 2026',
                 'heading' => 'REGISTER',
                 'subheading' => 'Registration opens in June',
-                'message' => "We're prepping the registration platform now. Tickets go live in June 2026 — save the date and we'll let you know the moment the doors open.",
+                'message' => 'Registration will open on 13 June 2026.',
             ]);
         }
 
