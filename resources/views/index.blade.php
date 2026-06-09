@@ -114,8 +114,8 @@
 </script>
 
 {{-- Sponsors --}}
-<section class="py-16 px-4 bg-gray-50">
-    <div class="max-w-5xl mx-auto space-y-14">
+<section class="py-8 md:py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto space-y-8 md:space-y-14">
 
         <!-- Platinum - Team Brasil -->
         <div>
@@ -126,9 +126,9 @@
                 </h3>
             </div>
             <div class="flex flex-col items-start gap-8 md:gap-8">
-                <img src="/images/sponsors/swan.png" alt="SWAN" class="h-[60px] md:h-[75px]" />
-                <img src="/images/sponsors/google.png" alt="Google" class="h-[60px] md:h-[70px]" />
-                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[60px] md:h-[70px]" />
+                <img src="/images/sponsors/swan.png" alt="SWAN" class="h-[45px] md:h-[75px]" />
+                <img src="/images/sponsors/google.png" alt="Google" class="h-[45px] md:h-[70px]" />
+                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[70px]" />
             </div>
         </div>
 
@@ -143,7 +143,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/bdo-consulting.png" alt="BDO Consulting" class="h-[60px] md:h-[70px]" />
+                <img src="/images/sponsors/bdo-consulting.png" alt="BDO Consulting" class="h-[45px] md:h-[70px]" />
             </div>
         </div>
 
@@ -172,9 +172,10 @@
                     <span class="text-amber-700">Bronze</span> Sponsor &ndash; Team Argentina
                 </h3>
             </div>
-            <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/frci.png" alt="FRCI" class="h-[60px] md:h-[80px]" />
-                <img src="/images/sponsors/ios.png" alt="IOS" class="h-[60px] md:h-[80px]" />
+            <div class="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-start gap-8">
+                <img src="/images/sponsors/frci.png" alt="FRCI" class="h-[50px] md:h-[80px]" />
+                <img src="/images/sponsors/ios.png" alt="IOS" class="h-[50px] md:h-[80px]" />
+                <img src="/images/sponsors/infomil.png" alt="Infomil" class="h-[45px] md:h-[75px]" />
             </div>
         </div>
 
@@ -188,7 +189,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/ringier.png" alt="Ringier" class="h-[50px] md:h-[60px]" />
+                <img src="/images/sponsors/ringier.png" alt="Ringier" class="h-[45px] md:h-[60px]" />
             </div>
         </div>
 
@@ -202,7 +203,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[50px] md:h-[60px]" />
+                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[60px]" />
             </div>
         </div>
 
@@ -216,7 +217,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/novity.png" alt="Novity" class="h-[50px] md:h-[60px]" />
+                <img src="/images/sponsors/novity.png" alt="Novity" class="h-[45px] md:h-[60px]" />
             </div>
         </div>
 
@@ -230,7 +231,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/klanik.jpg" alt="Klanik" class="h-[50px] md:h-[60px]" />
+                <img src="/images/sponsors/klanik.jpg" alt="Klanik" class="h-[45px] md:h-[60px]" />
             </div>
         </div>
 
@@ -244,7 +245,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/cloud.mu.png" alt="cloud.mu" class="h-[50px] md:h-[105px]" />
+                <img src="/images/sponsors/cloud-mu.png" alt="cloud.mu" class="h-[50px] md:h-[80px]" />
             </div>
         </div>
 
@@ -258,7 +259,7 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/la-sentinelle.png" alt="La Sentinelle" class="h-[50px] md:h-[60px]" />
+                <img src="/images/sponsors/la-sentinelle.png" alt="La Sentinelle" class="h-[45px] md:h-[60px]" />
             </div>
         </div>
 
@@ -266,7 +267,7 @@
 </section>
 
 {{--  What to expect  --}}
-<section class="mt-16 max-w-4xl mx-auto">
+<section class="mt-8 md:mt-16 max-w-4xl mx-auto">
     <h2 class="text-4xl lg:text-5xl font-devcon text-center">What to expect?</h2>
     <p class="mt-2 lg:mt-4 text-center text-lg lg:text-xl px-4 lg:px-0">
         Learn about industry trends, best practices and new innovations through sessions and workshops
