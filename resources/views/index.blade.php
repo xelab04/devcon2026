@@ -126,9 +126,15 @@
                 </h3>
             </div>
             <div class="flex flex-col items-start gap-8 md:gap-8">
-                <img src="/images/sponsors/swan.png" alt="SWAN" class="h-[45px] md:h-[75px]" />
-                <img src="/images/sponsors/google.png" alt="Google" class="h-[45px] md:h-[70px]" />
-                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[70px]" />
+                <a href="https://www.swanforlife.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/swan.png" alt="SWAN" class="h-[45px] md:h-[75px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
+                <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/google.png" alt="Google for Developers" class="h-[45px] md:h-[70px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
+                <a href="https://www.telecom.mu/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[70px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -143,7 +149,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/bdo-consulting.png" alt="BDO Consulting" class="h-[45px] md:h-[70px]" />
+                <a href="https://www.bdo.mu/en-gb/services/bdo-it-consulting" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/bdo-consulting.png" alt="BDO IT Consulting" class="h-[45px] md:h-[70px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -173,9 +181,13 @@
                 </h3>
             </div>
             <div class="flex flex-col md:flex-row md:flex-wrap items-start md:items-center justify-start gap-8">
-                <img src="/images/sponsors/frci.png" alt="FRCI" class="h-[50px] md:h-[80px]" />
+                <a href="https://www.frci.net/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/frci.png" alt="FRCI" class="h-[50px] md:h-[80px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
                 <img src="/images/sponsors/ios.png" alt="IOS" class="h-[50px] md:h-[80px]" />
-                <img src="/images/sponsors/infomil.png" alt="Infomil" class="h-[45px] md:h-[75px]" />
+                <a href="https://www.infomil.mu/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/infomil.png" alt="Infomil" class="h-[45px] md:h-[75px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -189,7 +201,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/ringier.png" alt="Ringier" class="h-[45px] md:h-[60px]" />
+                <a href="https://www.ringier.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/ringier.png" alt="Ringier" class="h-[45px] md:h-[60px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -203,7 +217,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[60px]" />
+                <a href="https://www.telecom.mu/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[60px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -217,7 +233,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/novity.png" alt="Novity" class="h-[45px] md:h-[60px]" />
+                <a href="https://novity.io/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/novity.png" alt="Novity" class="h-[45px] md:h-[60px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -231,7 +249,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/klanik.jpg" alt="Klanik" class="h-[45px] md:h-[60px]" />
+                <a href="https://www.klanik.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/klanik.jpg" alt="Klanik" class="h-[45px] md:h-[60px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
@@ -245,7 +265,9 @@
                 </h3>
             </div>
             <div class="flex flex-wrap items-center justify-start gap-8">
-                <img src="/images/sponsors/cloud-mu.png" alt="cloud.mu" class="h-[50px] md:h-[80px]" />
+                <a href="https://cloud.mu/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/sponsors/cloud-mu.png" alt="cloud.mu" class="h-[50px] md:h-[80px] transition-transform duration-500 ease-out hover:scale-105" />
+                </a>
             </div>
         </div>
 
