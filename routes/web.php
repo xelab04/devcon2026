@@ -78,6 +78,8 @@ Route::view('/team', 'team', [
             ['icon' => 'linkedin', 'label' => 'LinkedIn', 'url' => 'https://www.linkedin.com/in/girish-mahabir'],
         ]],
         ['name' => 'Hayley Kirstätter', 'photo' => 'hayley.jpg', 'links' => []],
+        ['name' => 'Mervyn Manilall', 'photo' => 'mervyn-manilall.jpg', 'links' => []],
+        ['name' => 'Namita Sham', 'photo' => 'namita-sham.png', 'links' => []],
         ['name' => 'Neil Baichoo', 'photo' => 'neil.jpg', 'links' => [
             ['icon' => 'linkedin', 'label' => 'LinkedIn', 'url' => 'https://linkedin.com/in/arwinneil'],
         ]],
