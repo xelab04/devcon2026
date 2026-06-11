@@ -31,7 +31,7 @@ class RegistrationFactory extends Factory
             'organisation' => fake()->company(),
             'job_title' => fake()->jobTitle(),
             'first_time' => fake()->boolean(),
-            'attending_reason' => fake()->randomElement(AttendingReason::cases()),
+            'attending_reason' => fake()->randomElements(AttendingReason::cases(), fake()->numberBetween(1, count(AttendingReason::cases()))),
             'consent' => true,
             'checked_in' => $checkedIn,
             'checked_in_at' => $checkedIn ? fake()->dateTimeBetween('-3 days', 'now') : null,

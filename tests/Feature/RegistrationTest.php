@@ -23,7 +23,7 @@ function validRegistrationData(array $overrides = []): array
         'organisation' => 'Analytical Engines Ltd',
         'job_title' => 'Engineer',
         'first_time' => '1',
-        'attending_reason' => 'attend_sessions',
+        'attending_reason' => ['attend_sessions'],
         'consent' => '1',
     ], $overrides);
 }

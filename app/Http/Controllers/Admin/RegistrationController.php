@@ -91,7 +91,7 @@ class RegistrationController extends Controller
                         $registration->organisation,
                         $registration->job_title,
                         $registration->first_time ? 'Yes' : 'No',
-                        $registration->attending_reason->label(),
+                        $registration->attending_reason?->map(fn ($r) => $r->label())->implode(', '),
                         $registration->consent ? 'Yes' : 'No',
                         $registration->checked_in ? 'Yes' : 'No',
                         $registration->checked_in_at?->format('Y-m-d H:i:s'),

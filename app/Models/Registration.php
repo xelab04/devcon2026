@@ -44,7 +44,7 @@ class Registration extends Model
         return [
             'gender' => Gender::class,
             'affiliation_type' => AffiliationType::class,
-            'attending_reason' => AttendingReason::class,
+            'attending_reason' => \Illuminate\Database\Eloquent\Casts\AsEnumCollection::class.':'.AttendingReason::class,
             'first_time' => 'boolean',
             'consent' => 'boolean',
             'checked_in' => 'boolean',

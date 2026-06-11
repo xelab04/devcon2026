@@ -27,7 +27,7 @@ class DashboardController extends Controller
 
         $reasons = [];
         foreach (AttendingReason::cases() as $reason) {
-            $reasons[$reason->label()] = Registration::query()->where('attending_reason', $reason->value)->count();
+            $reasons[$reason->label()] = Registration::query()->whereJsonContains('attending_reason', $reason->value)->count();
         }
 
         return view('admin.dashboard', [

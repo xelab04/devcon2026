@@ -136,16 +136,17 @@
                 </div>
 
                 <div>
-                    <span class="form-label">I am attending the conference to:</span>
+                    <span class="form-label">I am attending the conference to: <span class="text-ink-subtle font-normal">(select all that apply)</span></span>
                     <div class="grid gap-3 sm:grid-cols-3">
                         @foreach (\App\Enums\AttendingReason::cases() as $r)
                             <label class="choice-card">
-                                <input type="radio" name="attending_reason" value="{{ $r->value }}" @checked(old('attending_reason') === $r->value) class="accent-gold">
+                                <input type="checkbox" name="attending_reason[]" value="{{ $r->value }}" @checked(in_array($r->value, (array) old('attending_reason', []), true)) class="accent-gold">
                                 <span>{{ $r->label() }}</span>
                             </label>
                         @endforeach
                     </div>
                     @error('attending_reason') <p class="form-error">{{ $message }}</p> @enderror
+                    @error('attending_reason.*') <p class="form-error">{{ $message }}</p> @enderror
                 </div>
 
                 <div>
