@@ -16,13 +16,15 @@ class RegistrationConfirmationMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels, UsesConfiguredReplyTo;
 
-    public function __construct(public Registration $registration) {}
+    public function __construct(public Registration $registration)
+    {
+        $this->applyConfiguredReplyTo();
+    }
 
     public function envelope(): Envelope
     {
         return new Envelope(
             subject: 'Your DevCon 2026 registration is confirmed',
-            replyTo: $this->configuredReplyTo(),
         );
     }
 

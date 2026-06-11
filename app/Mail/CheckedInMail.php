@@ -15,13 +15,15 @@ class CheckedInMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels, UsesConfiguredReplyTo;
 
-    public function __construct(public Registration $registration) {}
+    public function __construct(public Registration $registration)
+    {
+        $this->applyConfiguredReplyTo();
+    }
 
     public function envelope(): Envelope
     {
         return new Envelope(
             subject: "You're checked in at DevCon 2026",
-            replyTo: $this->configuredReplyTo(),
         );
     }
 
