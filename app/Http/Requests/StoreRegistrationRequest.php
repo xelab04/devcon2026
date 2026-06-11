@@ -30,7 +30,8 @@ class StoreRegistrationRequest extends FormRequest
             'organisation' => ['required', 'string', 'max:150'],
             'job_title' => ['required', 'string', 'max:150'],
             'first_time' => ['required', 'boolean'],
-            'attending_reason' => ['required', Rule::enum(AttendingReason::class)],
+            'attending_reason' => ['required', 'array', 'min:1'],
+            'attending_reason.*' => [Rule::enum(AttendingReason::class)],
             'consent' => ['accepted'],
         ];
     }
@@ -44,7 +45,9 @@ class StoreRegistrationRequest extends FormRequest
             'gender.required' => 'Please select your gender.',
             'affiliation_type.required' => 'Please select your affiliation type.',
             'first_time.required' => 'Please tell us whether this is your first time attending.',
-            'attending_reason.required' => 'Please select what you are attending for.',
+            'attending_reason.required' => 'Please select at least one reason for attending.',
+            'attending_reason.array' => 'Please select at least one reason for attending.',
+            'attending_reason.min' => 'Please select at least one reason for attending.',
             'consent.accepted' => 'You must agree to the data usage statement to register.',
         ];
     }
