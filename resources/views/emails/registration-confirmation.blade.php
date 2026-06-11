@@ -30,33 +30,29 @@
                         </td>
                     </tr>
 
+                    @if ($qr && (! empty($qr['png']) || ! empty($qr['svg'])))
                     <tr>
                         <td style="padding:24px 40px;">
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F7F7FA; border:1px solid #E5E5EC; border-radius:12px;">
                                 <tr>
                                     <td align="center" style="padding:28px 24px;">
                                         <div style="font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#8B8B9C;">Your check-in pass</div>
-                                        @if ($qr && $qr['png'])
+                                        @if ($qr['png'] ?? null)
                                             <div style="margin:18px auto 0 auto; background:#ffffff; padding:12px; border-radius:12px; display:inline-block; border:1px solid #E5E5EC; line-height:0;">
                                                 <img src="{{ $message->embedData($qr['png'], 'qrcode.png', 'image/png') }}" alt="Check-in QR code" width="200" height="200" style="display:block; width:200px; height:200px;">
                                             </div>
-                                            <div style="margin-top:18px; font-size:13px; color:#8B8B9C; line-height:1.5;">Show this QR code at the entrance to check in.</div>
-                                        @elseif ($qr && $qr['svg'])
+                                        @else
                                             <div style="margin:18px auto 0 auto; background:#ffffff; padding:12px; border-radius:12px; display:inline-block; border:1px solid #E5E5EC; line-height:0;">
                                                 {!! $qr['svg'] !!}
                                             </div>
-                                            <div style="margin-top:18px; font-size:13px; color:#8B8B9C; line-height:1.5;">Show this QR code at the entrance to check in.</div>
-                                        @else
-                                            <div style="margin-top:18px; font-size:13px; color:#8B8B9C; line-height:1.5;">
-                                                Your check-in link:<br>
-                                                <a href="{{ $registration->checkInUrl() }}" style="color:#7C3AED; word-break:break-all;">{{ $registration->checkInUrl() }}</a>
-                                            </div>
                                         @endif
+                                        <div style="margin-top:18px; font-size:13px; color:#8B8B9C; line-height:1.5;">Show this QR code at the entrance to check in.</div>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
+                    @endif
 
                     <tr>
                         <td style="padding:8px 40px 8px 40px;">

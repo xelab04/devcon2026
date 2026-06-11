@@ -59,13 +59,23 @@ class RegistrationConfirmationMail extends Mailable implements ShouldQueue
                 'png' => (string) QrCode::format('png')->size(220)->margin(1)->generate($url),
                 'svg' => null,
             ];
-        } catch (\Throwable) {
+        } catch (\Throwable $e) {
+            \Log::warning('QR PNG generation failed; falling back to SVG', [
+                'registration_id' => $this->registration->id,
+                'exception' => $e::class.': '.$e->getMessage(),
+            ]);
+
             try {
                 return [
                     'png' => null,
                     'svg' => (string) QrCode::format('svg')->size(220)->margin(1)->generate($url),
                 ];
-            } catch (\Throwable) {
+            } catch (\Throwable $e) {
+                \Log::error('QR generation failed (PNG and SVG)', [
+                    'registration_id' => $this->registration->id,
+                    'exception' => $e::class.': '.$e->getMessage(),
+                ]);
+
                 return null;
             }
         }
