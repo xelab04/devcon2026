@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Mail\Concerns\UsesConfiguredReplyTo;
 use App\Models\Registration;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -13,7 +14,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class RegistrationConfirmationMail extends Mailable implements ShouldQueue
 {
-    use Queueable, SerializesModels;
+    use Queueable, SerializesModels, UsesConfiguredReplyTo;
 
     public function __construct(public Registration $registration) {}
 
@@ -21,6 +22,7 @@ class RegistrationConfirmationMail extends Mailable implements ShouldQueue
     {
         return new Envelope(
             subject: 'Your DevCon 2026 registration is confirmed',
+            replyTo: $this->configuredReplyTo(),
         );
     }
 

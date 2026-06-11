@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Mail\Concerns\UsesConfiguredReplyTo;
 use App\Models\Registration;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -12,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 
 class CheckedInMail extends Mailable implements ShouldQueue
 {
-    use Queueable, SerializesModels;
+    use Queueable, SerializesModels, UsesConfiguredReplyTo;
 
     public function __construct(public Registration $registration) {}
 
@@ -20,6 +21,7 @@ class CheckedInMail extends Mailable implements ShouldQueue
     {
         return new Envelope(
             subject: "You're checked in at DevCon 2026",
+            replyTo: $this->configuredReplyTo(),
         );
     }
 
