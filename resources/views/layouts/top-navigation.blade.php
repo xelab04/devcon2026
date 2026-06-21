@@ -15,7 +15,7 @@
         <a href="{{ route('speakers') }}" class="nav-link hover:text-yellow-400 transition-colors">Speakers</a>
         <a href="{{ route('agenda') }}" class="nav-link hover:text-yellow-400 transition-colors">Agenda</a>
         <a href="{{ route('register') }}" class="nav-link hover:text-yellow-400 transition-colors">Register</a>
-        <a href="{{ url('/') }}#photos" class="nav-link hover:text-yellow-400 transition-colors">Photos</a>
+        <a href="{{ route('photos') }}" class="nav-link hover:text-yellow-400 transition-colors">Photos</a>
         <a href="{{ route('team') }}" class="nav-link hover:text-yellow-400 transition-colors">The Team</a>
     </div>
 
@@ -34,7 +34,7 @@
         <a href="{{ route('speakers') }}" class="py-2 hover:text-yellow-400">Speakers</a>
         <a href="{{ route('agenda') }}" class="py-2 hover:text-yellow-400">Agenda</a>
         <a href="{{ route('register') }}" class="py-2 hover:text-yellow-400">Register</a>
-        <a href="{{ url('/') }}#photos" class="py-2 hover:text-yellow-400">Photos</a>
+        <a href="{{ route('photos') }}" class="py-2 hover:text-yellow-400">Photos</a>
         <a href="{{ route('team') }}" class="py-2 hover:text-yellow-400">The Team</a>
     </div>
 </nav>

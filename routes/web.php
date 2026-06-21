@@ -99,6 +99,8 @@ Route::view('/team', 'team', [
     ],
 ])->name('team');
 
+Route::redirect('/photos', 'https://photos.app.goo.gl/4MrQ8r3Xp4AgBY3e6')->name('photos');
+
 /*
 |--------------------------------------------------------------------------
 | Backoffice
