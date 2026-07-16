@@ -31,6 +31,22 @@
             <div class="mt-8 text-ink leading-relaxed">{!! nl2br(e($session['description'])) !!}</div>
         @endif
 
+        @if (! empty($panelists))
+            <h2 class="font-devcon text-2xl mt-12">Panelists</h2>
+            <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8">
+                @foreach ($panelists as $panelist)
+                    <figure class="text-center">
+                        <img src="{{ asset('images/panelists/'.$panelist['photo']) }}" alt="{{ $panelist['name'] }}"
+                             class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full object-cover shadow-md" loading="lazy" />
+                        <figcaption class="mt-3">
+                            <div class="font-devcon text-ink leading-tight">{{ $panelist['name'] }}</div>
+                            <div class="mt-1 text-xs md:text-sm text-ink-muted leading-snug">{{ $panelist['title'] }}</div>
+                        </figcaption>
+                    </figure>
+                @endforeach
+            </div>
+        @endif
+
         @if (! empty($speakers))
             <h2 class="font-devcon text-2xl mt-12">{{ count($speakers) > 1 ? 'Speakers' : 'Speaker' }}</h2>
             <div class="mt-4 space-y-4">
