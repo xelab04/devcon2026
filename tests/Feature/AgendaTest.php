@@ -67,7 +67,7 @@ it('shows the static panelists block on the sovereignty panel session', function
                             'roomId' => 74750,
                             'isPlenumSession' => true,
                             'isServiceSession' => false,
-                            'speakers' => [],
+                            'speakers' => [['id' => 'spk-ada', 'name' => 'Ada Lovelace']],
                         ],
                     ],
                 ],
@@ -86,7 +86,8 @@ it('shows the static panelists block on the sovereignty panel session', function
         ->assertSee('Head of Innovation, Mauritius Telecom')
         ->assertSee('Dante Sassenberg')
         ->assertSee('Head of Pentesting, Integrity360')
-        ->assertSee('images/panelists/anousha-mahadea.png');
+        ->assertSee('images/panelists/anousha-mahadea.png')
+        ->assertSee('Moderator');
 });
 
 it('does not show a panelists block on other sessions', function () {

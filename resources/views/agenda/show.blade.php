@@ -48,7 +48,8 @@
         @endif
 
         @if (! empty($speakers))
-            <h2 class="font-devcon text-2xl mt-12">{{ count($speakers) > 1 ? 'Speakers' : 'Speaker' }}</h2>
+            @php($speakerRole = ! empty($panelists) ? 'Moderator' : 'Speaker')
+            <h2 class="font-devcon text-2xl mt-12">{{ count($speakers) > 1 ? $speakerRole.'s' : $speakerRole }}</h2>
             <div class="mt-4 space-y-4">
                 @foreach ($speakers as $sp)
                     <a href="{{ ! empty($sp['id']) ? route('speaker', $sp['id']) : '#' }}" class="flex items-center gap-4 admin-card p-4 hover:border-gold transition-colors">
