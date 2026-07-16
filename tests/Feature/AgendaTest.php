@@ -46,3 +46,52 @@ it('shows a single session with description and speakers', function () {
 it('returns 404 for an unknown session', function () {
     $this->get(route('session', '999999'))->assertNotFound();
 });
+
+it('shows the static panelists block on the sovereignty panel session', function () {
+    \Illuminate\Support\Facades\Storage::disk('local')->put('sessionize/sessions.json', json_encode([
+        [
+            'date' => '2026-07-24T00:00:00',
+            'isDefault' => false,
+            'rooms' => [
+                [
+                    'id' => 74750,
+                    'name' => 'Educator 1',
+                    'sessions' => [
+                        [
+                            'id' => '1167895',
+                            'title' => 'Panel Discussion — Sovereign by Design',
+                            'description' => 'Panel on data, cloud and AI sovereignty.',
+                            'startsAt' => '2026-07-24T11:00:00',
+                            'endsAt' => '2026-07-24T13:00:00',
+                            'room' => 'Educator 1',
+                            'roomId' => 74750,
+                            'isPlenumSession' => true,
+                            'isServiceSession' => false,
+                            'speakers' => [['id' => 'spk-ada', 'name' => 'Ada Lovelace']],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ]));
+
+    $this->get(route('session', '1167895'))
+        ->assertOk()
+        ->assertSee('Panelists')
+        ->assertSee('Anousha Mahadea')
+        ->assertSee('CEO, Currimjee Informatics')
+        ->assertSee('Dylan Harbour')
+        ->assertSee('Director of Technology, Ringier South Africa')
+        ->assertSee('Naveesh Doolhur')
+        ->assertSee('Head of Innovation, Mauritius Telecom')
+        ->assertSee('Dante Sassenberg')
+        ->assertSee('Head of Pentesting, Integrity360')
+        ->assertSee('images/panelists/anousha-mahadea.png')
+        ->assertSee('Moderator');
+});
+
+it('does not show a panelists block on other sessions', function () {
+    $this->get(route('session', '1001'))
+        ->assertOk()
+        ->assertDontSee('Panelists');
+});

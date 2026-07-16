@@ -31,6 +31,26 @@ class AgendaController extends Controller
             'session' => $session,
             'speakers' => $speakers,
             'roomLabel' => $sessionize->roomLabelFor($session),
+            'panelists' => $this->panelistsFor($id),
         ]);
+    }
+
+    /**
+     * Static panel line-ups keyed by session id. Panelists are not Sessionize
+     * speakers, so their names, titles and photos are maintained here.
+     *
+     * @return array<int, array{name: string, title: string, photo: string}>
+     */
+    protected function panelistsFor(string $id): array
+    {
+        return match ($id) {
+            '1167895' => [
+                ['name' => 'Anousha Mahadea', 'title' => 'CEO, Currimjee Informatics', 'photo' => 'anousha-mahadea.png'],
+                ['name' => 'Dylan Harbour', 'title' => 'Director of Technology, Ringier South Africa', 'photo' => 'dylan-harbour.png'],
+                ['name' => 'Naveesh Doolhur', 'title' => 'Head of Innovation, Mauritius Telecom', 'photo' => 'naveesh-doolhur.png'],
+                ['name' => 'Dante Sassenberg', 'title' => 'Head of Pentesting, Integrity360', 'photo' => 'dante-sassenberg.png'],
+            ],
+            default => [],
+        };
     }
 }
