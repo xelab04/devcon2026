@@ -78,7 +78,7 @@ it('shows the static panelists block on the sovereignty panel session', function
     $this->get(route('session', '1167895'))
         ->assertOk()
         ->assertSee('Panelists')
-        ->assertSee('Anousha Sathan')
+        ->assertSee('Anousha Mahadea')
         ->assertSee('CEO, Currimjee Informatics')
         ->assertSee('Dylan Harbour')
         ->assertSee('Director of Technology, Ringier South Africa')
@@ -86,7 +86,7 @@ it('shows the static panelists block on the sovereignty panel session', function
         ->assertSee('Head of Innovation, Mauritius Telecom')
         ->assertSee('Dante Sassenberg')
         ->assertSee('Head of Pentesting, Integrity360')
-        ->assertSee('images/panelists/anousha-sathan.png');
+        ->assertSee('images/panelists/anousha-mahadea.png');
 });
 
 it('does not show a panelists block on other sessions', function () {
