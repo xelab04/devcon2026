@@ -83,7 +83,7 @@ it('shows the static panelists block on the sovereignty panel session', function
         ->assertSee('Dylan Harbour')
         ->assertSee('Director of Technology, Ringier South Africa')
         ->assertSee('Naveesh Doolhur')
-        ->assertSee('Head of Innovation, Mauritius Telecom')
+        ->assertSee('Head of AI & Data Analytics, Mauritius Telecom')
         ->assertSee('Dante Sassenberg')
         ->assertSee('Head of Pentesting, Integrity360')
         ->assertSee('images/panelists/anousha-mahadea.png')

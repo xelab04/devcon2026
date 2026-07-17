@@ -47,7 +47,7 @@ class AgendaController extends Controller
             '1167895' => [
                 ['name' => 'Anousha Mahadea', 'title' => 'CEO, Currimjee Informatics', 'photo' => 'anousha-mahadea.png'],
                 ['name' => 'Dylan Harbour', 'title' => 'Director of Technology, Ringier South Africa', 'photo' => 'dylan-harbour.png'],
-                ['name' => 'Naveesh Doolhur', 'title' => 'Head of Innovation, Mauritius Telecom', 'photo' => 'naveesh-doolhur.png'],
+                ['name' => 'Naveesh Doolhur', 'title' => 'Head of AI & Data Analytics, Mauritius Telecom', 'photo' => 'naveesh-doolhur.png'],
                 ['name' => 'Dante Sassenberg', 'title' => 'Head of Pentesting, Integrity360', 'photo' => 'dante-sassenberg.png'],
             ],
             default => [],
