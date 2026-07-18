@@ -133,7 +133,7 @@
                     <img src="/images/sponsors/google.png" alt="Google for Developers" class="h-[45px] md:h-[70px] transition-transform duration-500 ease-out hover:scale-105" />
                 </a>
                 <a href="https://www.telecom.mu/" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[45px] md:h-[70px] transition-transform duration-500 ease-out hover:scale-105" />
+                    <img src="/images/sponsors/telecom.png" alt="Mauritius Telecom" class="h-[50px] md:h-[85px] transition-transform duration-500 ease-out hover:scale-105" />
                 </a>
             </div>
         </div>
