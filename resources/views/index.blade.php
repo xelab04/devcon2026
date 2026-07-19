@@ -113,6 +113,19 @@
     }
 </script>
 
+{{-- Venue --}}
+<section class="py-12 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4"><i class="fas fa-map-marker-alt text-gold text-3xl"></i> Venue</h2>
+        <div class="flex flex-col items-center gap-4">
+            <p class="text-lg md:text-xl text-gray-700">Voilà Hotel, Bagatelle</p>
+            <a href="https://maps.app.goo.gl/2TkgfBKHkpfvAXDU6" target="_blank" rel="noopener" class="inline-block border-2 border-gray-900 text-gray-900 font-semibold text-sm px-6 py-2.5 rounded-lg hover:bg-gray-900 hover:text-white transition-colors">
+                View on Map
+            </a>
+        </div>
+    </div>
+</section>
+
 {{-- Sponsors --}}
 <section class="py-8 md:py-16 px-4 bg-gray-50">
     <div class="max-w-5xl mx-auto space-y-8 md:space-y-14">
