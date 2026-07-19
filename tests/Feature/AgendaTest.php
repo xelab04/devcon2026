@@ -79,7 +79,7 @@ it('shows the static panelists block on the sovereignty panel session', function
         ->assertOk()
         ->assertSee('Panelists')
         ->assertSee('Anousha Mahadea')
-        ->assertSee('CEO, Currimjee Informatics')
+        ->assertSee('General Manager, Currimjee Informatics')
         ->assertSee('Dylan Harbour')
         ->assertSee('Director of Technology, Ringier South Africa')
         ->assertSee('Naveesh Doolhur')
