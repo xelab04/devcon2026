@@ -2,25 +2,24 @@
 
 namespace App\Mail\Concerns;
 
-use Illuminate\Mail\Mailables\Address;
-
 trait UsesConfiguredReplyTo
 {
     /**
-     * Returns the configured Reply-To address as a single-element array
-     * (or an empty array when MAIL_REPLY_TO_ADDRESS is unset), shaped for
-     * passing to Envelope::replyTo.
-     *
-     * @return array<int, Address>
+     * Add the configured Reply-To address (if MAIL_REPLY_TO_ADDRESS is set)
+     * to the Mailable's $replyTo array. Intended to be called once from a
+     * Mailable's constructor, before the job is queued — setting it here
+     * avoids the duplicate Reply-To header that Envelope::replyTo can cause
+     * if Laravel re-hydrates the envelope across dispatch and queue
+     * processing.
      */
-    protected function configuredReplyTo(): array
+    protected function applyConfiguredReplyTo(): void
     {
         $address = config('mail.reply_to.address');
 
         if (empty($address)) {
-            return [];
+            return;
         }
 
-        return [new Address($address, config('mail.reply_to.name'))];
+        $this->replyTo($address, config('mail.reply_to.name'));
     }
 }
