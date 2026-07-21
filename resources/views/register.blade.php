@@ -153,7 +153,7 @@
                     <label class="flex gap-3 items-start cursor-pointer">
                         <input type="checkbox" name="consent" value="1" @checked(old('consent')) class="mt-1 accent-gold h-4 w-4">
                         <span class="text-sm text-ink-muted">
-                            I agree that the information provided in this form can be used for statistical purposes and shared with the Developers Conference 2025 sponsors.
+                            I agree that the information provided in this form can be used for statistical purposes and shared with the Developers Conference 2026 sponsors.
                         </span>
                     </label>
                     @error('consent') <p class="form-error">{{ $message }}</p> @enderror

@@ -31,7 +31,8 @@ function validRegistrationData(array $overrides = []): array
 it('shows the registration form', function () {
     $this->get(route('register'))
         ->assertOk()
-        ->assertSee('Complete registration');
+        ->assertSee('Complete registration')
+        ->assertSee('shared with the Developers Conference 2026 sponsors');
 });
 
 it('registers a new attendee and queues the confirmation email', function () {
