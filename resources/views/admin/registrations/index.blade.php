@@ -123,7 +123,7 @@
                     Undo the check-in for <strong x-text="target.name"></strong>? No email will be sent.
                 </span>
             </p>
-            <form method="POST" :action="target.checkedIn ? target.cancelUrl : target.checkinUrl"
+            <form method="GET" :action="target.checkedIn ? target.cancelUrl : target.checkinUrl"
                   class="mt-6 flex justify-end gap-3">
                 @csrf
                 <button type="button" class="btn-secondary" @click="modalOpen = false">Cancel</button>
